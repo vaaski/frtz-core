@@ -1,0 +1,29 @@
+{
+  "name": "frtz-core",
+  "version": "0.0.0",
+  "description": "this is the core used in the frtz cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaaski/frtz-core.git"
+  },
+  "keywords": [
+    "FRITZ!Box",
+    "cli",
+    "nodejs"
+  ],
+  "author": "vaaski <admin@vaa.ski> (https://github.com/vaaski)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vaaski/frtz-core/issues"
+  },
+  "homepage": "https://github.com/vaaski/frtz-core#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "qs": "^6.9.4",
+    "xml2js": "^0.4.23"
+  }
+}
