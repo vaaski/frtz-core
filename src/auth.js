@@ -42,7 +42,7 @@ const login = async ({
 
   if (session.BlockTime > 0)
     throw `Login blocked for ${session.BlockTime} seconds.`
-  else if (session.SID == "0000000000000000")
+  if (session.SID == "0000000000000000")
     throw "Login failed. Maybe the login credentials are invalid."
 
   return session
