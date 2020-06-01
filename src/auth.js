@@ -1,13 +1,38 @@
 const axios = require("axios").default
 const { parseStringPromise } = require("xml2js")
 const { createHash } = require("crypto")
+const qs = require("qs")
 
+/**
+ * A session object
+ * @typedef {Object} Session
+ * @property {string} SID
+ * @property {string} Challenge
+ * @property {string} BlockTime
+ * @property {Object} [Rights]
+ * @property {string[]} Name
+ * @property {string[]} Access
+ */
+
+/**
+ * get a challenge token
+ * @param {Object} options
+ * @param {string} options.host
+ * @returns {Promise<Session>}
+ */
 const getNewSession = async ({ host }) => {
   const { data } = await axios.get(`${host}/login_sid.lua`)
   const parsed = await parseStringPromise(data, { explicitArray: false })
   return parsed.SessionInfo
 }
 
+/**
+ * get a challenge token
+ * @param {Object} options
+ * @param {string} options.password
+ * @param {string} option.challenge
+ * @returns {string} solved challenge
+ */
 const getLoginToken = async ({ password, challenge }) => {
   const md5 = createHash("md5")
   md5.update(`${challenge}-${password}`, "ucs2")
@@ -15,6 +40,14 @@ const getLoginToken = async ({ password, challenge }) => {
   return `${challenge}-${hash}`
 }
 
+/**
+ * get session with username and loginToken
+ * @param {Object} options
+ * @param {string} options.loginToken
+ * @param {string} options.host
+ * @param {string} options.username
+ * @returns {Promise<Session>}
+ */
 const getSession = async ({ loginToken, host, username }) => {
   const { data } = await axios.get(`${host}/login_sid.lua`, {
     params: { response: loginToken, username },
@@ -23,6 +56,40 @@ const getSession = async ({ loginToken, host, username }) => {
   return parsed.SessionInfo
 }
 
+/**
+ * this makes a request to the region & language page,
+ * which seems to be the fastest in terms of response time (~650ms)
+ * @param {Object} options
+ * @param {string} options.SID
+ * @param {string} [options.host]
+ * @returns {Promise<boolean>}
+ */
+const checkAuth = async ({ SID, host = "http://fritz.box" }) => {
+  const { status } = await axios.post(
+    `${host}/data.lua`,
+    qs.stringify({
+      sid: SID,
+      page: "lang",
+    }),
+    {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      validateStatus: status => [200, 403].includes(status),
+    }
+  )
+
+  return status === 200
+}
+
+/**
+ * Takes password and optionally username and host and returns a logged in session object
+ * @param {object} options
+ * @param {string} options.password
+ * @param {string} [options.username]
+ * @param {string} [options.host]
+ * @returns {Promise<session>} session object
+ */
 const login = async ({
   password,
   username = "",
@@ -50,6 +117,7 @@ const login = async ({
 
 module.exports = {
   login,
+  checkAuth,
   _internals: {
     getNewSession,
     getLoginToken,
