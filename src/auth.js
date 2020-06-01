@@ -9,9 +9,10 @@ const qs = require("qs")
  * @property {string} SID
  * @property {string} Challenge
  * @property {string} BlockTime
+ * @property {number} [expires]
  * @property {Object} [Rights]
- * @property {string[]} Name
- * @property {string[]} Access
+ * @property {string[]} Rights.Name
+ * @property {string[]} Rights.Access
  */
 
 /**
@@ -41,7 +42,7 @@ const getLoginToken = async ({ password, challenge }) => {
 }
 
 /**
- * get session with username and loginToken
+ * get session with username and loginToken, expires in 20 minutes unless used
  * @param {Object} options
  * @param {string} options.loginToken
  * @param {string} options.host
@@ -53,7 +54,7 @@ const getSession = async ({ loginToken, host, username }) => {
     params: { response: loginToken, username },
   })
   const parsed = await parseStringPromise(data, { explicitArray: false })
-  return parsed.SessionInfo
+  return { ...parsed.SessionInfo, expires: Date.now() + 60e3 * 20 }
 }
 
 /**
@@ -75,7 +76,7 @@ const checkAuth = async ({ SID, host = "http://fritz.box" }) => {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      validateStatus: status => [200, 403].includes(status),
+      validateStatus: statusCode => [200, 403].includes(statusCode),
     }
   )
 
