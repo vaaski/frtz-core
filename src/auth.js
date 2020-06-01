@@ -54,7 +54,7 @@ const getSession = async ({ loginToken, host, username }) => {
     params: { response: loginToken, username },
   })
   const parsed = await parseStringPromise(data, { explicitArray: false })
-  return { ...parsed.SessionInfo, expires: Date.now() + 60e3 * 20 }
+  return { ...parsed.SessionInfo, expires: Date.now() + 1200e3 }
 }
 
 /**
