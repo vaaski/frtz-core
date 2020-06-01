@@ -1,6 +1,6 @@
 {
   "name": "frtz-core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "this is the core used in the frtz cli",
   "main": "index.js",
   "scripts": {
