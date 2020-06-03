@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo NO TESTS",
-    "readme": "node gendocs.js"
+    "readme": "node gendocs.js>readme.md"
   },
   "repository": {
     "type": "git",
