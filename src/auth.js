@@ -11,12 +11,12 @@ const qs = require("qs")
  * @property {string} BlockTime
  * @property {number} [expires]
  * @property {Object} [Rights]
- * @property {string[]} Rights.Name
- * @property {string[]} Rights.Access
+ * @property {string[]} [Rights.Name]
+ * @property {string[]} [Rights.Access]
  */
 
 /**
- * get a challenge token
+ * get a new challenge token
  * @param {Object} options
  * @param {string} options.host
  * @returns {Promise<Session>}
@@ -28,7 +28,7 @@ const getNewSession = async ({ host }) => {
 }
 
 /**
- * get a challenge token
+ * get a login token (challenge + password)
  * @param {Object} options
  * @param {string} options.password
  * @param {string} option.challenge
