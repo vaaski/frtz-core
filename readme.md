@@ -1,11 +1,31 @@
-# frtz-core
+<p align="center">
+  <a href="https://github.com/vaaski/frtz-core" target="_blank">
+    <img src="https://colo.vaaski.com/static/frtz-core.svg">
+  </a>
+</p>
+<hr>
 
-Access your FRITZ!Box configuration from Node.js, used in [vaaski/frtz](https://github.com/vaaski/frtz).
+<p align="center">
+  Access your FRITZ!Box configuration from Node.js, used in <a href="https://github.com/vaaski/frtz">vaaski/frtz</a>.
+</p>
 
-[![Version](https://img.shields.io/npm/v/frtz-core.svg?style=for-the-badge)](https://npmjs.org/package/frtz-core)
-[![Used in](https://img.shields.io/badge/USED%20IN-FRTZ-3E2E50?style=for-the-badge)](https://github.com/vaaski/frtz)
-[![Downloads/week](https://img.shields.io/npm/dw/frtz-core.svg?style=for-the-badge)](https://npmjs.org/package/frtz-core)
-[![License](https://img.shields.io/npm/l/frtz-core.svg?style=for-the-badge)](https://github.com/vaaski/frtz-core/blob/master/package.json)
+<p align="center">
+  <a href="https://npmjs.org/package/frtz-core">
+    <img src="https://img.shields.io/npm/v/frtz-core.svg?style=for-the-badge">
+  </a>
+
+  <a href="https://github.com/vaaski/frtz">
+    <img src="https://img.shields.io/badge/USED%20IN-FRTZ%20CLI-3E2E50?style=for-the-badge">
+  </a>
+
+  <a href="https://npmjs.org/package/frtz-core">
+    <img src="https://img.shields.io/npm/dw/frtz-core.svg?style=for-the-badge">
+  </a>
+
+  <a href="https://github.com/vaaski/frtz-core/blob/master/package.json">
+    <img src="https://img.shields.io/npm/l/frtz-core.svg?style=for-the-badge">
+  </a>
+</p>
 
 - [Usage](#Usage)
 - [Functions](#Functions)
