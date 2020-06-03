@@ -4,7 +4,8 @@
   "description": "this is the core used in the frtz cli",
   "main": "index.js",
   "scripts": {
-    "test": "echo NO TESTS"
+    "test": "echo NO TESTS",
+    "readme": "node gendocs.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "eslint": "^7.1.0"
+    "eslint": "^7.1.0",
+    "jsdoc-to-markdown": "^6.0.1"
   }
 }
