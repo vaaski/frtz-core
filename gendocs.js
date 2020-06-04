@@ -41,7 +41,7 @@ const { auth, network } = require("frtz")
   const { SID } = await auth.login({ password: "mypassword" })
   const { passive } = await network.getDevices({ SID })
 
-  const woke = await network.wake({ UID: passive[0], SID })
+  const woke = await network.wake({ UID: passive[0].UID, SID })
 })()
 \`\`\`
 `
