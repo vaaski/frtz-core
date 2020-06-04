@@ -125,11 +125,11 @@ this makes a request to the region & language page,which seems to be the fastes
 
 **Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| options | <code>Object</code> | 
-| options.SID | <code>string</code> | 
-| [options.host] | <code>string</code> | 
+| Param | Type | Default |
+| --- | --- | --- |
+| options | <code>Object</code> |  | 
+| options.SID | <code>string</code> |  | 
+| [options.host] | <code>string</code> | <code>&quot;https://fritz.box&quot;</code> | 
 
 <a name="login"></a>
 
@@ -139,12 +139,12 @@ Takes password and optionally username and host and returns a logged in session 
 **Kind**: global function  
 **Returns**: <code>Promise.&lt;session&gt;</code> - session object  
 
-| Param | Type |
-| --- | --- |
-| options | <code>object</code> | 
-| options.password | <code>string</code> | 
-| [options.username] | <code>string</code> | 
-| [options.host] | <code>string</code> | 
+| Param | Type | Default |
+| --- | --- | --- |
+| options | <code>object</code> |  | 
+| options.password | <code>string</code> |  | 
+| [options.username] | <code>string</code> |  | 
+| [options.host] | <code>string</code> | <code>&quot;https://fritz.box&quot;</code> | 
 
 <a name="getDevices"></a>
 
@@ -154,11 +154,11 @@ Get a list of devices
 **Kind**: global function  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - data object containing both online and offline devices  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>Object</code> |  |
-| options.SID | <code>string</code> | session ID |
-| [options.host] | <code>string</code> | host (default = "http://fritz.box") |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| options | <code>Object</code> |  |  |
+| options.SID | <code>string</code> |  | session ID |
+| [options.host] | <code>string</code> | <code>&quot;https://fritz.box&quot;</code> |  |
 
 <a name="wake"></a>
 
@@ -167,12 +167,12 @@ Wake a device from sleep (Wake On Lan)
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>Object</code> |  |
-| options.SID | <code>string</code> | session ID |
-| options.UID | <code>string</code> | unit ID (device ID) |
-| [options.host] | <code>string</code> | host (default = "http://fritz.box") |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| options | <code>Object</code> |  |  |
+| options.SID | <code>string</code> |  | session ID |
+| options.UID | <code>string</code> |  | unit ID (device ID) |
+| [options.host] | <code>string</code> | <code>&quot;https://fritz.box&quot;</code> |  |
 
 <a name="Session"></a>
 

@@ -62,7 +62,7 @@ const getSession = async ({ loginToken, host, username }) => {
  * which seems to be the fastest in terms of response time (~650ms)
  * @param {Object} options
  * @param {string} options.SID
- * @param {string} [options.host]
+ * @param {string} [options.host=https://fritz.box]
  * @returns {Promise<boolean>}
  */
 const checkAuth = async ({ SID, host = "http://fritz.box" }) => {
@@ -88,7 +88,7 @@ const checkAuth = async ({ SID, host = "http://fritz.box" }) => {
  * @param {object} options
  * @param {string} options.password
  * @param {string} [options.username]
- * @param {string} [options.host]
+ * @param {string} [options.host=https://fritz.box]
  * @returns {Promise<session>} session object
  */
 const login = async ({

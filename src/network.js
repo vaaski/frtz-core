@@ -5,7 +5,7 @@ const qs = require("qs")
  * Get a list of devices
  * @param {Object} options
  * @param {string} options.SID session ID
- * @param {string} [options.host] host (default = "http://fritz.box")
+ * @param {string} [options.host=https://fritz.box]
  * @returns {Promise<Object>} data object containing both online and offline devices
  */
 const getDevices = async ({ SID, host = "http://fritz.box" }) => {
@@ -30,7 +30,7 @@ const getDevices = async ({ SID, host = "http://fritz.box" }) => {
  * @param {Object} options
  * @param {string} options.SID session ID
  * @param {string} options.UID unit ID (device ID)
- * @param {string} [options.host] host (default = "http://fritz.box")
+ * @param {string} [options.host=https://fritz.box]
  * @returns {Promise<boolean>}
  */
 const wake = async ({ SID, UID, host = "http://fritz.box" }) => {
