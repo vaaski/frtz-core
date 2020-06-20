@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/vaaski/frtz-core" target="_blank">
-    <img src="https://colo.vaaski.com/static/frtz-core.svg">
+    <img src="https://colo.vaaski.com/static/frtz-core2.svg">
   </a>
 </p>
 <hr>
@@ -83,76 +83,77 @@ which seems to be the fastest in terms of response time (~650ms)</p>
 ## frtz.auth.getNewSession(options) ⇒ [<code>Promise.&lt;Session&gt;</code>](#Session)
 get a new challenge token
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param | Type |
 | --- | --- |
-| options | <code>Object</code> | 
-| options.host | <code>string</code> | 
+| options | <code>Object</code> |
+| options.host | <code>string</code> |
 
 <a name="getLoginToken"></a>
 
 ## frtz.auth.getLoginToken(options) ⇒ <code>string</code>
 get a login token (challenge + password)
 
-**Kind**: global function  
-**Returns**: <code>string</code> - solved challenge  
+**Kind**: global function
+**Returns**: <code>string</code> - solved challenge
 
 | Param | Type |
 | --- | --- |
-| options | <code>Object</code> | 
-| options.password | <code>string</code> | 
-| option.challenge | <code>string</code> | 
+| options | <code>Object</code> |
+| options.password | <code>string</code> |
+| option.challenge | <code>string</code> |
 
 <a name="getSession"></a>
 
 ## frtz.auth.getSession(options) ⇒ [<code>Promise.&lt;Session&gt;</code>](#Session)
 get session with username and loginToken, expires in 20 minutes unless used
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param | Type |
 | --- | --- |
-| options | <code>Object</code> | 
-| options.loginToken | <code>string</code> | 
-| options.host | <code>string</code> | 
-| options.username | <code>string</code> | 
+| options | <code>Object</code> |
+| options.loginToken | <code>string</code> |
+| options.host | <code>string</code> |
+| options.username | <code>string</code> |
 
 <a name="checkAuth"></a>
 
 ## frtz.auth.checkAuth(options) ⇒ <code>Promise.&lt;boolean&gt;</code>
-this makes a request to the region & language page,which seems to be the fastest in terms of response time (~650ms)
+this makes a request to the region & language page,
+which seems to be the fastest in terms of response time (~650ms)
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param | Type | Default |
 | --- | --- | --- |
-| options | <code>Object</code> |  | 
-| options.SID | <code>string</code> |  | 
-| [options.host] | <code>string</code> | <code>&quot;https://fritz.box&quot;</code> | 
+| options | <code>Object</code> |  |
+| options.SID | <code>string</code> |  |
+| [options.host] | <code>string</code> | <code>&quot;https://fritz.box&quot;</code> |
 
 <a name="login"></a>
 
 ## frtz.auth.login(options) ⇒ <code>Promise.&lt;session&gt;</code>
 Takes password and optionally username and host and returns a logged in session object
 
-**Kind**: global function  
-**Returns**: <code>Promise.&lt;session&gt;</code> - session object  
+**Kind**: global function
+**Returns**: <code>Promise.&lt;session&gt;</code> - session object
 
 | Param | Type | Default |
 | --- | --- | --- |
-| options | <code>object</code> |  | 
-| options.password | <code>string</code> |  | 
-| [options.username] | <code>string</code> |  | 
-| [options.host] | <code>string</code> | <code>&quot;https://fritz.box&quot;</code> | 
+| options | <code>object</code> |  |
+| options.password | <code>string</code> |  |
+| [options.username] | <code>string</code> |  |
+| [options.host] | <code>string</code> | <code>&quot;https://fritz.box&quot;</code> |
 
 <a name="getDevices"></a>
 
 ## frtz.network.getDevices(options) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get a list of devices
 
-**Kind**: global function  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - data object containing both online and offline devices  
+**Kind**: global function
+**Returns**: <code>Promise.&lt;Object&gt;</code> - data object containing both online and offline devices
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -165,7 +166,7 @@ Get a list of devices
 ## frtz.network.wake(options) ⇒ <code>Promise.&lt;boolean&gt;</code>
 Wake a device from sleep (Wake On Lan)
 
-**Kind**: global function  
+**Kind**: global function
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -179,17 +180,17 @@ Wake a device from sleep (Wake On Lan)
 ## Session : <code>Object</code>
 A session object
 
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| SID | <code>string</code> | 
-| Challenge | <code>string</code> | 
-| BlockTime | <code>string</code> | 
-| [expires] | <code>number</code> | 
-| [Rights] | <code>Object</code> | 
-| [Rights.Name] | <code>Array.&lt;string&gt;</code> | 
-| [Rights.Access] | <code>Array.&lt;string&gt;</code> | 
+| SID | <code>string</code> |
+| Challenge | <code>string</code> |
+| BlockTime | <code>string</code> |
+| [expires] | <code>number</code> |
+| [Rights] | <code>Object</code> |
+| [Rights.Name] | <code>Array.&lt;string&gt;</code> |
+| [Rights.Access] | <code>Array.&lt;string&gt;</code> |
 
 
